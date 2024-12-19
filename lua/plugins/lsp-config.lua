@@ -21,8 +21,7 @@ return {
 
 				ensure_installed = {
 					"lua_ls", -- Lua language server
-					-- "jsonls",
-					-- "mdx_analyzer", -- MDX analyzer
+					"mdx_analyzer", -- MDX analyzer
 					"pyright", -- Python language server
 					"ts_ls", -- Typscript language server
 					"tailwindcss", -- Tailwind CSS language server
@@ -35,9 +34,8 @@ return {
 		config = function()
 			print("Loading LSP configurations")
 			local lspconfig = require("lspconfig")
-			-- lspconfig.jsonls.setup({})
 			lspconfig.lua_ls.setup({})
-			-- lspconfig.mdx_analyzer.setup({})
+			lspconfig.mdx_analyzer.setup({})
 			lspconfig.pyright.setup({})
 			lspconfig.ts_ls.setup({})
 			lspconfig.tailwindcss.setup({
