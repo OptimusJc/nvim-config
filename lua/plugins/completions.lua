@@ -8,11 +8,18 @@ return {
 			return {}
 		end,
 	},
+	-- Todo: do this or that
 	-- then: setup supertab in cmp
 	{
 		"hrsh7th/nvim-cmp",
 		dependencies = {
 			"hrsh7th/cmp-emoji",
+			"hrsh7th/cmp-emoji", -- Include emoji completion
+			"hrsh7th/cmp-nvim-lsp", -- LSP source for nvim-cmp
+			"hrsh7th/cmp-buffer", -- Buffer completions
+			"hrsh7th/cmp-path", -- Path completions
+			"hrsh7th/cmp-cmdline", -- Command line completions
+			"saadparwaiz1/cmp_luasnip", -- Snippet completions from LuaSnip
 		},
 		-- -@param opts cmp.ConfigSchema
 		opts = function(_, opts)
