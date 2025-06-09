@@ -7,3 +7,6 @@
 -- opt.shiftwidth = 4
 -- opt.tabstop = 4
 -- opt.softtabstop = 4
+--
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
