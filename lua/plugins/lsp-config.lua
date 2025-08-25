@@ -1,6 +1,6 @@
 return {
 	{
-		"mason-org/mason.nvim",
+		"williamboman/mason.nvim",
 		opts = {
 			ui = {
 				icons = {
@@ -12,13 +12,12 @@ return {
 		},
 	},
 	{
-		"mason-org/mason-lspconfig.nvim",
+		"williamboman/mason-lspconfig.nvim",
 		opts = {
 			ensure_installed = {
 				"lua_ls", -- Lua language server
-				"mdx_analyzer", -- MDX analyzer
 				"pyright", -- Python language server
-				"tsserver", -- Typscript language server
+				"ts_ls", -- Typscript language server
 				"tailwindcss", -- Tailwind CSS language server
 			},
 		},
@@ -31,9 +30,16 @@ return {
 			local util = require("lspconfig.util")
 
 			lspconfig.lua_ls.setup({})
-			lspconfig.mdx_analyzer.setup({})
+			lspconfig.emmet_ls.setup({
+				filetypes = {
+					"html",
+					"css",
+					"javascriptreact",
+					"typescriptreact",
+				},
+			})
 			lspconfig.pyright.setup({})
-			lspconfig.tsserver.setup({})
+			lspconfig.ts_ls.setup({})
 			lspconfig.tailwindcss.setup({
 				root_dir = function(fname)
 					return util.root_pattern(
